@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import withLoading from '../hoc/withLoading';
 
-export default class ProductDetailView extends Component {
-  static defaulProps = {
+class ProductDetailView extends Component {
+  static defaultProps = {
     id: null,
     title: '',
     description: '',
@@ -17,9 +18,11 @@ export default class ProductDetailView extends Component {
         <div>{description}</div>
         <img src={mainImgUrl} alt={title} />
         {detailImgUrls.map(url => (
-          <img src={detailImgUrls} alt={title} />
+          <img key={url} src={url} alt={title} />
         ))}
       </div>
     );
   }
 }
+
+export default withLoading(ProductDetailView);
