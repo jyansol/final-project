@@ -7,6 +7,7 @@ export default class Layout extends Component {
       <div>
         <div>
           <Link to="/">LOGO</Link>
+          <Link to="/login">로오그이인</Link>
         </div>
         {this.props.children}
         <div>FOOTER</div>
