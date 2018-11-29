@@ -1,12 +1,54 @@
 import React, { Component } from 'react';
 
 export default class LoginFormView extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      username: '',
+      password: '',
+    };
+  }
+
+  handleUsernameChange(e) {
+    this.setState({
+      username: e.target.value,
+    });
+  }
+
+  handlePasswordChange(e) {
+    this.setState({
+      password: e.target.value,
+    });
+  }
+
+  handleLoginButtonClick() {
+    const { onLogin } = this.props;
+    const { username, password } = this.state;
+    onLogin(username, password);
+  }
+
+  // handleFieldChange(){
+  //   this.setState({
+  //     [name]: e.target.value
+  //   })
+  // }
+
   render() {
+    const { username, password } = this.state;
     return (
       <div>
-        <input type="text" />
-        <input type="password" />
-        <button>LOGIN</button>
+        <input
+          type="text"
+          value={username}
+          onChange={e => this.handleUsernameChange(e)}
+        />
+        <input
+          type="password"
+          value={password}
+          onChange={e => this.handlePasswordChange(e)}
+        />
+        <button onClick={() => this.handleLoginButtonClick()}>LOGIN</button>
       </div>
     );
   }
