@@ -43,10 +43,19 @@ export default class ProductDetail extends Component {
     });
   }
 
+  // 서버측 장바구니에 항목을 추가하는 함수
+  handleCreateCartItem = async (optionId, amount) => {
+    //
+    alert(`장바구니 : ${optionId}, ${amount}`);
+  };
+
   render() {
     return (
       <div>
-        <ProductDetailView {...this.state} />
+        <ProductDetailView
+          {...this.state}
+          onCreateCartItem={this.handleCreateCartItem}
+        />
       </div>
     );
   }
