@@ -16,7 +16,7 @@ export default class HomePage extends Component {
 
     return (
       <Layout>
-        <h1>Homee</h1>
+        <h1>Home</h1>
         <Link to="/">ALL</Link>
         <Link to="/?category=top">TOP</Link>
         <Link to="/?category=pants">PANTS</Link>
