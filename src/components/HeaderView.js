@@ -4,6 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 export default class HeaderView extends Component {
   render() {
     const { username, logout, history } = this.props;
+    console.log('유저네임 ::', username);
 
     return (
       <div>
